@@ -33,13 +33,15 @@ while True:
     
     
     if choice == '1':
-        s = input("Enter book name to search: ")
+        search_book = input("Enter book name to search: ")
+        found = False
         for book in books:
-            if book.lower() == s.lower():
-                print("Book found:", s)
+            if book.lower() == search_book.lower():
+                print("Book found:", book)
+                found = True
                 break
-            else:
-                print("Book not found:", s)
+        if not found:
+            print("Book not found")
     elif choice == '2':
         add = input("Enter book name to add: ")
         if add not in books:
@@ -60,4 +62,5 @@ while True:
             print("-", book)
     elif choice == '5':
         print("Exiting the program.")
+
         break 
